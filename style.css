@@ -111,9 +111,9 @@ text-align: center;
     border: 1px solid black;
 border-radius: 15px;
 display: flex;
-flex-direction: column;
+flex-direction: column-reverse;
 justify-content: space-around;
-text-align:start;
+text-align:center;
 position: relative;
 
 }
@@ -121,7 +121,8 @@ position: relative;
     position: absolute;
     width: 200px;
     height: 270px;
-    top: 130px;
+    top: -60px;
+    right: 30px;
 }
 
 .grid5{
@@ -135,21 +136,51 @@ justify-content: space-around;
 text-align: center;
 position: relative;
 
-}.grid6{
+}
+.grid5 .image-container{
+    width: 50%;
+}
+.grid6{
     background-color: var(--secundary-color);
     grid-area: infofans;
     border: 1px solid black;
 border-radius: 15px;
-}.grid7{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+text-align: center;
+}
+.grid6 .image-container {
+    height: 30%;
+}
+
+.grid7{
     background-color: var(--secundary-color);
     grid-area: infohistory;
     border: 1px solid black;
 border-radius: 15px;
-}.grid8{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+text-align: center;
+}
+
+
+.grid8{
     background-color: var(--secundary-color);
     grid-area: infout;
     border: 1px solid black;
 border-radius: 15px;
+display: flex;
+flex-direction: column-reverse;
+justify-content: space-around;
+text-align: center;
+position: relative;
+}
+.grid8 .image-container img{
+    position: absolute;
+    left: 10px;
+    top: -50px;
 }
 .grid9{
     background-color: var(--secundary-color);
