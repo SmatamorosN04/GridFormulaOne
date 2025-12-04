@@ -9,5 +9,151 @@
     padding: 0;
 }
 body{
-    background-color: ;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    width: 100%;
+    height: 120px;
+
+}
+.header-container{
+    width: 100%;
+    height: 100%;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image-header--container{
+    width: auto;
+    height: 100%;
+}
+.image-header--container img{
+    width: 100%;
+    height: 100%;
+}
+main{
+    width: 100%;
+    height: 800px;
+}
+.Grid-container{
+    margin: 20px auto;
+    width: 70%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(4, minmax(70px, 1fr));
+    grid-template-columns: repeat(4, minmax(70px,1fr));
+    grid-template-areas: 
+    "infosecondteam infocar infotrack alonso"
+    "infosecondteam infoteam infoteam alonso"
+    "infofans infoteam infoteam infotv"
+    "infofans infohistory infout infout";
+    gap: 15px;
+}
+
+.grid1{
+    background-color: var(--secundary-color);
+    grid-area: infosecondteam;
+        border: 1px solid black;
+border-radius: 15px;
+padding: 3px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.grid1 img{
+    width: 100%;
+    height: 50%;
+}
+.grid2{
+    background-color: var(--secundary-color);
+    grid-area: infocar;
+    border: 1px solid black;
+border-radius: 15px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+text-align: center;
+}
+.image-container{
+    margin: 0 auto;
+    width: 90%;
+    height: 50%;
+}
+.grid2 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.grid3{
+    background-color: var(--secundary-color);
+    grid-area: infotrack;
+    border: 1px solid black;
+border-radius: 15px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+text-align: center;
+}
+.grid3 .image-container img {
+    position: relative;
+}
+.grid4{
+    background-color: var(--secundary-color);
+    grid-area: alonso;
+    border: 1px solid black;
+border-radius: 15px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+text-align:start;
+position: relative;
+
+}
+.grid4 .image-container img{
+    position: absolute;
+    width: 200px;
+    height: 270px;
+    top: 130px;
+}
+
+.grid5{
+    background-color: var(--secundary-color);
+    grid-area: infoteam;
+    border: 1px solid black;
+border-radius: 15px;
+display: flex;
+flex-direction: column-reverse;
+justify-content: space-around;
+text-align: center;
+position: relative;
+
+}.grid6{
+    background-color: var(--secundary-color);
+    grid-area: infofans;
+    border: 1px solid black;
+border-radius: 15px;
+}.grid7{
+    background-color: var(--secundary-color);
+    grid-area: infohistory;
+    border: 1px solid black;
+border-radius: 15px;
+}.grid8{
+    background-color: var(--secundary-color);
+    grid-area: infout;
+    border: 1px solid black;
+border-radius: 15px;
+}
+.grid9{
+    background-color: var(--secundary-color);
+    grid-area: infotv;
+    border: 1px solid black;
+border-radius: 15px;
 }
