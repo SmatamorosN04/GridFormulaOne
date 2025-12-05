@@ -3,13 +3,19 @@
     --secundary-color: #9BABAB;
     --terciary-color: #4A5C6A;
     --text-color: #08141B;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-hover: 0 6px 20px rgba(0,0,0,0.15);
 }
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     background-color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    line-height: 1.4rem;
     width: 100%;
     height: 100%;
 }
@@ -17,7 +23,8 @@ body{
 header{
     width: 100%;
     height: 120px;
-
+     background-color: var(--tertiary-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 .header-container{
     width: 100%;
@@ -25,6 +32,7 @@ header{
         display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
 }
 .image-header--container{
     width: auto;
@@ -33,6 +41,7 @@ header{
 .image-header--container img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 main{
     width: 100%;
@@ -43,8 +52,8 @@ main{
     width: 70%;
     height: 100%;
     display: grid;
-    grid-template-rows: repeat(4, minmax(70px, 1fr));
-    grid-template-columns: repeat(4, minmax(70px,1fr));
+    grid-template-rows: repeat(4, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, minmax(150px,1fr));
     grid-template-areas: 
     "infosecondteam infocar infotrack alonso"
     "infosecondteam infoteam infoteam alonso"
@@ -53,138 +62,243 @@ main{
     gap: 15px;
 }
 
-.grid1{
-    background-color: var(--secundary-color);
-    grid-area: infosecondteam;
-        border: 1px solid black;
-border-radius: 15px;
-padding: 3px;
-display: flex;
-flex-direction: column;
-justify-content: center;
+.grid1, .grid2, .grid5, .grid6, .grid8, .grid9 {
+  background: var(--secondary-color);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
-.grid1 img{
-    width: 100%;
-    height: 50%;
+
+
+/* Efecto hover para todas */
+.grid1:hover, .grid2:hover, .grid3:hover, .grid4:hover, .grid5:hover, 
+.grid6:hover, .grid7:hover, .grid8:hover, .grid9:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
 }
-.grid2{
-    background-color: var(--secundary-color);
-    grid-area: infocar;
-    border: 1px solid black;
-border-radius: 15px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-text-align: center;
+
+/* Asignación de áreas */
+.grid1 { grid-area: infosecondteam; }
+.grid2 { grid-area: infocar; }
+.grid3 { grid-area: infotrack; }
+.grid4 { grid-area: alonso; }
+.grid5 { grid-area: infoteam; }
+.grid6 { grid-area: infofans; }
+.grid7 { grid-area: infohistory; }
+.grid8 { grid-area: infout; }
+.grid9 { grid-area: infotv; }
+
+
+.grid7 {
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
-.image-container{
-    margin: 0 auto;
-    width: 90%;
-    height: 50%;
+
+.grid7 .image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;
+  opacity: 0.2;
+  border-radius: 16px;
+  overflow: hidden;
 }
-.grid2 img{
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
+
+.grid7 .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
 }
-.image-container img{
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
+
+/* Grid3 - infotrack con imagen de fondo */
+.grid3 {
+  background: var(--secondary-color);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
-.grid3{
-    background-color: var(--secundary-color);
-    grid-area: infotrack;
-    border: 1px solid black;
-border-radius: 15px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-text-align: center;
+
+.grid3 .image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;
+  opacity: 0.2;
+  border-radius: 16px;
+  overflow: hidden;
 }
+
 .grid3 .image-container img {
-    position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
 }
-.grid4{
-    background-color: var(--secundary-color);
-    grid-area: alonso;
-    border: 1px solid black;
-border-radius: 15px;
-display: flex;
-flex-direction: column-reverse;
-justify-content: space-around;
-text-align:center;
-position: relative;
-
-}
-.grid4 .image-container img{
-    position: absolute;
-    width: 200px;
-    height: 270px;
-    top: -60px;
-    right: 30px;
-}
-
-.grid5{
-    background-color: var(--secundary-color);
-    grid-area: infoteam;
-    border: 1px solid black;
-border-radius: 15px;
-display: flex;
-flex-direction: column-reverse;
-justify-content: space-around;
-text-align: center;
-position: relative;
-
-}
-.grid5 .image-container{
-    width: 50%;
-}
-.grid6{
-    background-color: var(--secundary-color);
-    grid-area: infofans;
-    border: 1px solid black;
-border-radius: 15px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-text-align: center;
-}
-.grid6 .image-container {
-    height: 30%;
-}
-
-.grid7{
-    background-color: var(--secundary-color);
-    grid-area: infohistory;
-    border: 1px solid black;
-border-radius: 15px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-text-align: center;
+.grid3 p {
+  color: var(--text-color);
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
 }
 
 
-.grid8{
-    background-color: var(--secundary-color);
-    grid-area: infout;
-    border: 1px solid black;
-border-radius: 15px;
-display: flex;
-flex-direction: column-reverse;
-justify-content: space-around;
-text-align: center;
-position: relative;
+.grid4 {
+  background: var(--secondary-color);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
-.grid8 .image-container img{
-    position: absolute;
-    left: 10px;
-    top: -50px;
+
+.grid4 .image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;
+  opacity: 0.7;
+  border-radius: 16px;
+  overflow: hidden;
 }
-.grid9{
-    background-color: var(--secundary-color);
-    grid-area: infotv;
-    border: 1px solid black;
-border-radius: 15px;
+
+.grid4 .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.grid4 p {
+  color: var(--text-color);
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Textos */
+.grid1 p, .grid2 p, .grid5 p, 
+.grid6 p, .grid8 p, .grid9 p {
+  color: var(--text-color);
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  flex-grow: 1;
+      z-index: 1;
+}
+
+/* Contenedores de imagen normales */
+.grid1 .image-container,
+.grid2 .image-container,
+.grid5 .image-container,
+.grid6 .image-container,
+.grid8 .image-container,
+.grid9 .image-container {
+  width: 100%;
+  height: 120px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid1 .image-container img,
+.grid2 .image-container img,
+.grid5 .image-container img,
+.grid6 .image-container img,
+.grid8 .image-container img,
+.grid9 .image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid1 .image-container img:hover,
+.grid2 .image-container img:hover,
+.grid5 .image-container img:hover,
+.grid6 .image-container img:hover,
+.grid8 .image-container img:hover,
+.grid9 .image-container img:hover {
+  transform: scale(1.05);
+}
+
+.grid3 .image-container img{
+    top: 10px;
+}
+
+.grid3 .image-container img,
+.grid4 .image-container img,
+.grid7 .image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.grid1 .image-container {
+  height: 100px;
+}
+
+.grid2 .image-container,
+.grid5 .image-container {
+  height: 110px;
+}
+
+.grid6 .image-container img{
+  height: 200px;
+  width: 400px;
+}
+
+.grid8 .image-container,
+.grid9 .image-container {
+  height: 100px;
+  width: 200px;
 }
