@@ -199,7 +199,7 @@ main{
   height: 100%;
   margin: 0;
   z-index: 1;
-  opacity: 0.7;
+  opacity: 0.2;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -214,6 +214,7 @@ main{
 .grid4 p {
   color: var(--text-color);
   font-size: 0.95em;
+  font-weight: 700;
   margin-bottom: 10px;
   flex-grow: 1;
   position: relative;
@@ -301,4 +302,53 @@ main{
 .grid9 .image-container {
   height: 100px;
   width: 200px;
+}
+@media (max-width: 320px){
+    .Grid-container{
+        width: 95%;
+        grid-template-columns: 320px;
+        grid-template-rows: repeat(9, minmax(320px, 1fr));
+        grid-template-areas: 
+        "infosecondteam"
+        "infocar"
+        "infotrack"
+        "infofans"
+        "infotv"
+        "infohistory"
+        "infout";
+        gap: 20px;
+    }
+    .grid1 .image-container,
+  .grid2 .image-container,
+  .grid5 .image-container {
+    height: 70px;
+  }
+    .grid6 .image-container img {
+    height: 100px;
+    width: 200px;
+  }
+  .grid8 .image-container,
+  .grid9 .image-container {
+    height: 60px;
+    width: 100px;
+  }
+  
+  .grid3 .image-container,
+  .grid4 .image-container,
+  .grid7 .image-container {
+    opacity: 0.1;
+  }
+  
+  header {
+    height: 60px;
+  }
+  
+  .image-header--container {
+    height: 80%;
+  }
+  
+  body {
+    line-height: 1.2rem;
+  }
+  
 }
